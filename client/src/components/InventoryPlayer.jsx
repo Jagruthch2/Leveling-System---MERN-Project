@@ -32,7 +32,7 @@ const InventoryPlayer = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/user/inventory', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/user/inventory', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -70,7 +70,7 @@ const InventoryPlayer = () => {
       console.log('Using item:', itemId);
 
       const response = await axios.patch(
-        `http://localhost:5000/api/user/inventory/${itemId}/use`,
+        `https://leveling-system-mern-project.onrender.com/api/user/inventory/${itemId}/use`,
         {},
         {
           headers: { 

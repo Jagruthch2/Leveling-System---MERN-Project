@@ -49,7 +49,7 @@ const DungeonQuests = () => {
   // Fetch skills from backend
   const fetchSkills = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/skills', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/skills', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -86,7 +86,7 @@ const DungeonQuests = () => {
   // Fetch quests from backend
   const fetchQuests = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/dungeon-quests', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/dungeon-quests', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -146,7 +146,7 @@ const DungeonQuests = () => {
     setSubmitting(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/dungeon-quests', {
+      const response = await axios.post('https://leveling-system-mern-project.onrender.com/api/dungeon-quests', {
         name: formData.name.trim(),
         xp: parseInt(formData.xp),
         coins: parseInt(formData.coins),
@@ -192,7 +192,7 @@ const DungeonQuests = () => {
     setDeleting(questId);
 
     try {
-      const response = await axios.delete(`http://localhost:5000/api/dungeon-quests/${questId}`, {
+      const response = await axios.delete(`https://leveling-system-mern-project.onrender.com/api/dungeon-quests/${questId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

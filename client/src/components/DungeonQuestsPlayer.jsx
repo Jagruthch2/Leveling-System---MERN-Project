@@ -48,7 +48,7 @@ const DungeonQuestsPlayer = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/dungeon-quests', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/dungeon-quests', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -82,7 +82,7 @@ const DungeonQuestsPlayer = () => {
       }
 
       const response = await axios.patch(
-        `http://localhost:5000/api/dungeon-quests/${questId}/complete`,
+        `https://leveling-system-mern-project.onrender.com/api/dungeon-quests/${questId}/complete`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` }

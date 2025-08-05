@@ -25,7 +25,7 @@ const ShopPlayer = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/user/profile', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/user/profile', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -61,7 +61,7 @@ const ShopPlayer = () => {
       }
 
       // Remove showAll=true to only get current user's items
-      const response = await axios.get('http://localhost:5000/api/shop', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/shop', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -106,7 +106,7 @@ const ShopPlayer = () => {
       }
 
       const response = await axios.post(
-        'http://localhost:5000/api/user/purchase',
+        'https://leveling-system-mern-project.onrender.com/api/user/purchase',
         { itemId },
         {
           headers: { Authorization: `Bearer ${token}` }

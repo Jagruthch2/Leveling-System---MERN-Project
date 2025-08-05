@@ -53,7 +53,7 @@ const Skills = () => {
   // Fetch skills from backend
   const fetchSkills = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/skills', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/skills', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -154,7 +154,7 @@ const Skills = () => {
     setSubmitting(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/skills', {
+      const response = await axios.post('https://leveling-system-mern-project.onrender.com/api/skills', {
         name: fullSkillName,
         xp: parseInt(formData.xp) || 0
       }, {
@@ -202,7 +202,7 @@ const Skills = () => {
     setUpdating(skillId);
 
     try {
-      const response = await axios.put(`http://localhost:5000/api/skills/${skillId}`, {
+      const response = await axios.put(`https://leveling-system-mern-project.onrender.com/api/skills/${skillId}`, {
         xp: parsedXP
       }, {
         headers: {
@@ -273,7 +273,7 @@ const Skills = () => {
     setDeleting(skillId);
 
     try {
-      const response = await axios.delete(`http://localhost:5000/api/skills/${skillId}`, {
+      const response = await axios.delete(`https://leveling-system-mern-project.onrender.com/api/skills/${skillId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

@@ -59,7 +59,7 @@ const Profile = () => {
     setUpdating(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put('http://localhost:5000/api/user/profile', {
+      const response = await axios.put('https://leveling-system-mern-project.onrender.com/api/user/profile', {
         totalXp: editingValues.xp,
         coins: editingValues.coins
       }, {
@@ -102,7 +102,7 @@ const Profile = () => {
     setDeleting(titleName);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.delete(`http://localhost:5000/api/user/titles/${encodeURIComponent(titleName)}`, {
+      const response = await axios.delete(`https://leveling-system-mern-project.onrender.com/api/user/titles/${encodeURIComponent(titleName)}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -201,7 +201,7 @@ const Profile = () => {
       }
 
       // Fetch profile data from the new backend endpoint
-      const response = await axios.get('http://localhost:5000/api/user/profile', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/user/profile', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -221,13 +221,13 @@ const Profile = () => {
         const token = localStorage.getItem('token');
         // Fetch data from all quest endpoints to calculate total XP
         const [dailyQuests, dungeonQuests, penaltyQuests] = await Promise.all([
-          axios.get('http://localhost:5000/api/daily-quests', {
+          axios.get('https://leveling-system-mern-project.onrender.com/api/daily-quests', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('http://localhost:5000/api/dungeon-quests', {
+          axios.get('https://leveling-system-mern-project.onrender.com/api/dungeon-quests', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('http://localhost:5000/api/penalty-quests', {
+          axios.get('https://leveling-system-mern-project.onrender.com/api/penalty-quests', {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);

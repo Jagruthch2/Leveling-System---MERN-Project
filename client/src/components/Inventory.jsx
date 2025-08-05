@@ -32,7 +32,7 @@ const Inventory = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/user/inventory', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/user/inventory', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -70,7 +70,7 @@ const Inventory = () => {
       console.log('Deleting item:', itemId);
 
       const response = await axios.delete(
-        `http://localhost:5000/api/user/inventory/${itemId}`,
+        `https://leveling-system-mern-project.onrender.com/api/user/inventory/${itemId}`,
         {
           headers: { 
             Authorization: `Bearer ${token}`,

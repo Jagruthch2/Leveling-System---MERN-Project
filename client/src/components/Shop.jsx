@@ -40,7 +40,7 @@ const Shop = ({ onClose }) => {
       const token = localStorage.getItem('token');
       console.log('Fetching items with token:', token ? 'Token exists' : 'No token');
       
-      const response = await axios.get('http://localhost:5000/api/shop', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/shop', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -106,7 +106,7 @@ const Shop = ({ onClose }) => {
       console.log('Submitting with token:', token ? 'Token exists' : 'No token');
       console.log('Form data:', formData);
       
-      const response = await axios.post('http://localhost:5000/api/shop', {
+      const response = await axios.post('https://leveling-system-mern-project.onrender.com/api/shop', {
         name: formData.name.trim(),
         description: formData.description.trim(),
         cost: parseInt(formData.cost)
@@ -157,7 +157,7 @@ const Shop = ({ onClose }) => {
       console.log('Deleting shop item:', itemId);
       console.log('Auth token present:', !!token);
       
-      const response = await axios.delete(`http://localhost:5000/api/shop/${itemId}`, {
+      const response = await axios.delete(`https://leveling-system-mern-project.onrender.com/api/shop/${itemId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

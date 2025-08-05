@@ -93,7 +93,7 @@ const PenaltyQuestsPlayer = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/penalty-quests', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/penalty-quests', {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -141,7 +141,7 @@ const PenaltyQuestsPlayer = () => {
       }
 
       const response = await axios.patch(
-        `http://localhost:5000/api/penalty-quests/${questId}/accept`,
+        `https://leveling-system-mern-project.onrender.com/api/penalty-quests/${questId}/accept`,
         {},
         {
           headers: { 

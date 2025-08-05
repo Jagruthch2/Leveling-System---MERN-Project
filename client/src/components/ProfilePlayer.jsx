@@ -83,7 +83,7 @@ const ProfilePlayer = () => {
       }
 
       // Fetch profile data from the backend endpoint
-      const response = await axios.get('http://localhost:5000/api/user/profile', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/user/profile', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -103,13 +103,13 @@ const ProfilePlayer = () => {
         const token = localStorage.getItem('token');
         // Fetch data from all quest endpoints to calculate total XP
         const [dailyQuests, dungeonQuests, penaltyQuests] = await Promise.all([
-          axios.get('http://localhost:5000/api/daily-quests', {
+          axios.get('https://leveling-system-mern-project.onrender.com/api/daily-quests', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('http://localhost:5000/api/dungeon-quests', {
+          axios.get('https://leveling-system-mern-project.onrender.com/api/dungeon-quests', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('http://localhost:5000/api/penalty-quests', {
+          axios.get('https://leveling-system-mern-project.onrender.com/api/penalty-quests', {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);

@@ -46,7 +46,7 @@ const SkillsPlayer = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/skills', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/skills', {
         headers: { Authorization: `Bearer ${token}` }
       });
       

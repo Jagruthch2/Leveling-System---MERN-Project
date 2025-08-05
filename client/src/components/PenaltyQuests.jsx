@@ -48,7 +48,7 @@ const PenaltyQuests = () => {
   const fetchSkills = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/skills', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/skills', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -86,7 +86,7 @@ const PenaltyQuests = () => {
   const fetchQuests = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/penalty-quests', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/penalty-quests', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -143,7 +143,7 @@ const PenaltyQuests = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/penalty-quests', {
+      const response = await axios.post('https://leveling-system-mern-project.onrender.com/api/penalty-quests', {
         name: formData.name.trim(),
         xp: parseInt(formData.xp),
         skill: formData.skill
@@ -189,7 +189,7 @@ const PenaltyQuests = () => {
       console.log('Deleting penalty quest:', questId);
       console.log('Auth token present:', !!token);
       
-      const response = await axios.delete(`http://localhost:5000/api/penalty-quests/${questId}`, {
+      const response = await axios.delete(`https://leveling-system-mern-project.onrender.com/api/penalty-quests/${questId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

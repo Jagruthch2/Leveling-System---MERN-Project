@@ -44,7 +44,7 @@ const RewardsInventory = () => {
   const fetchRewards = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/rewards', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/rewards', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -68,7 +68,7 @@ const RewardsInventory = () => {
   const fetchInventory = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/inventory', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/inventory', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -125,7 +125,7 @@ const RewardsInventory = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/rewards', {
+      const response = await axios.post('https://leveling-system-mern-project.onrender.com/api/rewards', {
         name: formData.name.trim(),
         description: formData.description.trim(),
         type: formData.type,
@@ -195,7 +195,7 @@ const RewardsInventory = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put(`http://localhost:5000/api/rewards/${editing}`, {
+      const response = await axios.put(`https://leveling-system-mern-project.onrender.com/api/rewards/${editing}`, {
         name: formData.name.trim(),
         description: formData.description.trim(),
         type: formData.type,
@@ -254,7 +254,7 @@ const RewardsInventory = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.delete(`http://localhost:5000/api/rewards/${rewardId}`, {
+      const response = await axios.delete(`https://leveling-system-mern-project.onrender.com/api/rewards/${rewardId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

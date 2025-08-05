@@ -48,7 +48,7 @@ const DailyQuests = () => {
   // Fetch daily quest completion status from backend
   const fetchDailyQuestStatus = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/user/daily-quest-status', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/user/daily-quest-status', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -85,7 +85,7 @@ const DailyQuests = () => {
   // Fetch quests from backend
   const fetchQuests = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/daily-quests', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/daily-quests', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -110,7 +110,7 @@ const DailyQuests = () => {
   // Fetch skills from backend
   const fetchSkills = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/skills', {
+      const response = await axios.get('https://leveling-system-mern-project.onrender.com/api/skills', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -142,7 +142,7 @@ const DailyQuests = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/user/toggle-quest-completion', {
+      const response = await axios.post('https://leveling-system-mern-project.onrender.com/api/user/toggle-quest-completion', {
         questId: questId
       }, {
         headers: {
@@ -214,7 +214,7 @@ const DailyQuests = () => {
       });
 
       // Send completion data to backend with skill XP updates
-      const response = await axios.post('http://localhost:5000/api/user/complete-daily-quests', {
+      const response = await axios.post('https://leveling-system-mern-project.onrender.com/api/user/complete-daily-quests', {
         completedQuestIds: completedQuestIds,
         totalXP,
         totalCoins,
@@ -228,7 +228,7 @@ const DailyQuests = () => {
       if (response.data.success) {
         // Update skills with the earned XP
         try {
-          const skillResponse = await axios.post('http://localhost:5000/api/skills/update-multiple', {
+          const skillResponse = await axios.post('https://leveling-system-mern-project.onrender.com/api/skills/update-multiple', {
             skillXPUpdates
           }, {
             headers: {
