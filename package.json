@@ -1,0 +1,20 @@
+{
+  "name": "shadow-system-app",
+  "version": "1.0.0",
+  "description": "A complete authentication system with gaming-inspired UI",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "start": "concurrently \"npm run server:prod\" \"npm run client:build\"",
+    "server:prod": "cd server && npm start",
+    "client:build": "cd client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["authentication", "react", "express", "mongodb", "jwt", "gaming-ui"],
+  "author": "Your Name",
+  "license": "MIT"
+}
